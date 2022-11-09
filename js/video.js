@@ -23,14 +23,14 @@ document.querySelector("#pause").addEventListener("click", function() {
 
 /*slow down*/
 document.querySelector("#slower").addEventListener("click", function() {
-	console.log("video speed = ", video.playbackRate*=0.9);
-	video.playbackRate*=0.9
+	video.playbackRate-=0.1;
+	console.log("video speed = ", video.playbackRate-0.1);
 });
 
 /*speed up*/
 document.querySelector("#faster").addEventListener("click", function() {
-	console.log("video speed = ", video.playbackRate*=1.1);
-	video.playbackRate*=1.1
+	video.playbackRate+=0.1;
+	console.log("video speed = ", video.playbackRate+0.1);
 });
 
 /*skip ahead*/
@@ -44,9 +44,11 @@ document.querySelector("#mute").addEventListener("click", function() {
 	console.log("mute video");
 	if (video.muted == false){
 		video.muted = true
+		document.getElementById("mute").innerHTML = "Unmute"
 	}
 	else {
 		video.muted = false
+		document.getElementById("mute").innerHTML = "Mute"
 	}
 });
 
